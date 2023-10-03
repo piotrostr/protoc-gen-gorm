@@ -1,6 +1,6 @@
 # https://docs.buf.build/lint-usage/
 version: v1
-name: infoblox.com/infobloxopen/protoc-gen-gorm
+name: buf.build/piotrostr/protoc-gen-gorm
 lint:
   use:
     - DEFAULT
@@ -13,16 +13,16 @@ lint:
     - google
   ignore_only:
     PACKAGE_DIRECTORY_MATCH:
-    - options
-    - postgres_arrays
-    - types
+      - options
+      - postgres_arrays
+      - types
     PACKAGE_VERSION_SUFFIX:
-    - options
-    - postgres_arrays
-    - types
-    - user
-    - google/api/annotations.proto
-    - google/api/http.proto
+      - options
+      - postgres_arrays
+      - types
+      - user
+      - google/api/annotations.proto
+      - google/api/http.proto
 breaking:
   use:
     - FILE
