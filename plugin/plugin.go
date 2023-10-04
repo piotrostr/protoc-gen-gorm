@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	gormopts "github.com/infobloxopen/protoc-gen-gorm/options"
 	"github.com/jinzhu/inflection"
+	gormopts "github.com/piotrostr/protoc-gen-gorm/options"
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
@@ -3001,6 +3001,7 @@ func (b *ORMBuilder) followsUpdateSetConventions(inType *protogen.Message, outTy
 		inEntity    *protogen.Field
 		inFieldMask *protogen.Field
 	)
+	println("here now")
 
 	for _, field := range inType.Fields {
 		if string(field.Desc.Name()) == "objects" {
@@ -3066,6 +3067,12 @@ func (b *ORMBuilder) followsUpdateConventions(inType *protogen.Message, outType 
 			if b.isOrmable(inTypeName) {
 				typeOrmable = true
 			}
+		}
+
+		if field == nil ||
+			field.Desc == nil ||
+			field.Desc.Message() == nil {
+			return false, "", ""
 		}
 
 		// Check that type of field is a FieldMask
