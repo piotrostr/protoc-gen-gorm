@@ -3,7 +3,6 @@ module github.com/piotrostr/protoc-gen-gorm
 require (
 	github.com/golang/protobuf v1.5.2
 	github.com/google/go-cmp v0.5.8
-	github.com/infobloxopen/protoc-gen-gorm v1.1.2
 	github.com/jinzhu/inflection v1.0.0
 	github.com/lib/pq v1.10.2
 	google.golang.org/protobuf v1.28.0
